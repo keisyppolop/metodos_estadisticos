@@ -1,0 +1,20 @@
+---
+title: "Métodos Estadísticos"
+author: "Fernando y Keisy"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib]
+---
+
+# Introducción
+## Introducción
+
+El análisis exploratorio de datos (EDA) constituye una etapa fundamental para comprender las características y el comportamiento de un conjunto de datos antes de realizar análisis posteriores. En este trabajo se realiza un análisis exploratorio sobre un conjunto de datos relacionado con viviendas, teniendo como variable respuesta `median_house_value` y diferentes variables independientes asociadas con características de las viviendas, la población, los ingresos y su ubicación.
+
+En primer lugar, se realiza una revisión general de los datos, identificando su estructura y posibles valores faltantes, para posteriormente realizar las transformaciones necesarias que permitan trabajar con la información de manera adecuada. Luego, se analiza individualmente la variable respuesta y las variables independientes mediante medidas estadísticas y diferentes representaciones gráficas, con el propósito de identificar distribuciones, tendencias, dispersión, asimetrías y posibles valores extremos.
+
+Posteriormente, se estudian las relaciones entre las variables mediante un análisis bivariado. Esta exploración permite reconocer patrones y posibles asociaciones entre las características del conjunto de datos, tanto con respecto a la variable respuesta como entre las propias variables independientes. Como apoyo a esta exploración, se utiliza la función `ggpairs` del paquete GGally para obtener una visión conjunta de las relaciones entre las variables numéricas.
+
+Finalmente, a partir de los patrones identificados durante el análisis, se realiza un proceso de ingeniería de características mediante la creación de nuevas variables que permitan representar de una manera más significativa la información contenida en algunas de las variables originales. Después de estas transformaciones, se vuelve a realizar el análisis exploratorio para evaluar cómo cambió el comportamiento de los datos y si se redujo la redundancia entre las variables.
+
+De esta manera, el EDA permite no solo describir el conjunto de datos, sino también comprender sus principales características y preparar las variables para las etapas posteriores del análisis.
