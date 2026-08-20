@@ -1,11 +1,9 @@
 book_filename: "bookdown-demo"
-
 rmd_files:
   - index.Rmd
   - 01-intro_Fernando_Keisy...Rmd
-
+output_dir: "docs"
 language:
   ui:
     chapter_name: "Chapter "
-
 delete_merged_file: true
