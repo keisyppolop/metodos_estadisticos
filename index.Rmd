@@ -1,14 +1,13 @@
-<<<<<<< HEAD
+
 ---
 title: "Métodos Estadísticos"
-author: "Fernando y Keisy"
+author: "Fernando Cabrera y Keisy Polo"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
 ---
 
 # Introducción
-## Introducción
 
 El análisis exploratorio de datos (EDA) constituye una etapa fundamental para comprender las características y el comportamiento de un conjunto de datos antes de realizar análisis posteriores. En este trabajo se realiza un análisis exploratorio sobre un conjunto de datos relacionado con viviendas, teniendo como variable respuesta `median_house_value` y diferentes variables independientes asociadas con características de las viviendas, la población, los ingresos y su ubicación.
 

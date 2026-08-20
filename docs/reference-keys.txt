@@ -1,6 +1,4 @@
-head
 introducción
-introducción-1
 intro
 análisis-de-las-variables-independientes-características
 análisis-exploratorio-bivariado-con-la-variable-respuesta-valor-medio-de-la-vivienda
