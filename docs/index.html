@@ -154,6 +154,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="01-intro_Fernando_Keisy.html"><a href="01-intro_Fernando_Keisy.html#cuando-los-datos-son-pareados"><i class="fa fa-check"></i><b>4.1</b> Cuando los datos son pareados</a></li>
 <li class="chapter" data-level="4.2" data-path="01-intro_Fernando_Keisy.html"><a href="01-intro_Fernando_Keisy.html#cuando-las-varianzas-son-distintas"><i class="fa fa-check"></i><b>4.2</b> Cuando las varianzas son distintas</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="01-intro_Fernando_Keisy.html"><a href="01-intro_Fernando_Keisy.html#comprobaci%C3%B3n-del-teorema-de-raz%C3%B3n-de-varianzas-paso-a-paso"><i class="fa fa-check"></i><b>5</b> <strong>Comprobación del teorema de razón de varianzas paso a paso</strong></a></li>
 </ul>
 
       </nav>
@@ -177,7 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="introducción" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Introducción<a href="index.html#introducci%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>El análisis exploratorio de datos (EDA) constituye una etapa fundamental para comprender las características y el comportamiento de un conjunto de datos antes de realizar análisis posteriores. En este trabajo se realiza un análisis exploratorio sobre un conjunto de datos relacionado con viviendas, teniendo como variable respuesta <code>median_house_value</code> y diferentes variables independientes asociadas con características de las viviendas, la población, los ingresos y su ubicación.</p>
+<p>El análisis exploratorio de datos (EDA) constituye una etapa fundamental para comprender las características y el comportamiento de un conjunto de datos antes de realizar análisis posteriores. En este trabajo se realiza un análisis exploratorio sobre un conjunto de datos relacionado con viviendas, teniendo como variable respuesta <code>median_house_value</code> y diferentes variables independientes asociadas con características de las viviendas, la población, los ingresos y su ugit bicación.</p>
 <p>En primer lugar, se realiza una revisión general de los datos, identificando su estructura y posibles valores faltantes, para posteriormente realizar las transformaciones necesarias que permitan trabajar con la información de manera adecuada. Luego, se analiza individualmente la variable respuesta y las variables independientes mediante medidas estadísticas y diferentes representaciones gráficas, con el propósito de identificar distribuciones, tendencias, dispersión, asimetrías y posibles valores extremos.</p>
 <p>Posteriormente, se estudian las relaciones entre las variables mediante un análisis bivariado. Esta exploración permite reconocer patrones y posibles asociaciones entre las características del conjunto de datos, tanto con respecto a la variable respuesta como entre las propias variables independientes. Como apoyo a esta exploración, se utiliza la función <code>ggpairs</code> del paquete GGally para obtener una visión conjunta de las relaciones entre las variables numéricas.</p>
 <p>Finalmente, a partir de los patrones identificados durante el análisis, se realiza un proceso de ingeniería de características mediante la creación de nuevas variables que permitan representar de una manera más significativa la información contenida en algunas de las variables originales. Después de estas transformaciones, se vuelve a realizar el análisis exploratorio para evaluar cómo cambió el comportamiento de los datos y si se redujo la redundancia entre las variables.</p>
@@ -244,6 +245,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

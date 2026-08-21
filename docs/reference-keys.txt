@@ -9,3 +9,4 @@ análisis-exploratorio-bivariado-con-la-variable-respuesta-y-variables-transform
 comprobación-del-teorema-de-diferencia-de-medias-paso-a-paso
 cuando-los-datos-son-pareados
 cuando-las-varianzas-son-distintas
+comprobación-del-teorema-de-razón-de-varianzas-paso-a-paso
