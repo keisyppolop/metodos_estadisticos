@@ -9,7 +9,7 @@ bibliography: [book.bib]
 
 # Introducción
 
-El análisis exploratorio de datos (EDA) constituye una etapa fundamental para comprender las características y el comportamiento de un conjunto de datos antes de realizar análisis posteriores. En este trabajo se realiza un análisis exploratorio sobre un conjunto de datos relacionado con viviendas, teniendo como variable respuesta `median_house_value` y diferentes variables independientes asociadas con características de las viviendas, la población, los ingresos y su ubicación.
+El análisis exploratorio de datos (EDA) constituye una etapa fundamental para comprender las características y el comportamiento de un conjunto de datos antes de realizar análisis posteriores. En este trabajo se realiza un análisis exploratorio sobre un conjunto de datos relacionado con viviendas, teniendo como variable respuesta `median_house_value` y diferentes variables independientes asociadas con características de las viviendas, la población, los ingresos y su ugit bicación.
 
 En primer lugar, se realiza una revisión general de los datos, identificando su estructura y posibles valores faltantes, para posteriormente realizar las transformaciones necesarias que permitan trabajar con la información de manera adecuada. Luego, se analiza individualmente la variable respuesta y las variables independientes mediante medidas estadísticas y diferentes representaciones gráficas, con el propósito de identificar distribuciones, tendencias, dispersión, asimetrías y posibles valores extremos.
 

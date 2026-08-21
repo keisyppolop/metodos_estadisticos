@@ -1555,6 +1555,110 @@ Al comparar los resultados, el t manual (46.21171) y los grados de libertad (107
 Con un p tan cercano a cero, se rechaza la hipótesis nula de igualdad de medias: sí hay una diferencia significativa entre dfi y dfg. Esto también se ve reflejado en el intervalo de confianza (4.126.960 – 4.496.870), que no incluye el cero, y en la diferencia tan grande entre las medias (5.090.405,9 vs 778.490,6). En resumen, todo el cálculo manual confirma que el resultado que arroja t.test() es correcto.
 
 
+# **Comprobación del teorema de razón de varianzas paso a paso**
+
+
+**Importemos la base de datos y hagamos las transformaciones necesarias**
+
+```{r}
+df <- read_excel("C:/Users/Admin/Downloads/Métodos estadísticos (4)/Métodos estadísticos/codigo/data/datos_medicos.xlsx")
+```
+
+```{r}
+#tranformación ----
+df$Presion <- factor(df$Presion)
+dfs <- df %>%
+  filter(Presion == 'PresionSistolica') %>%
+  pull(Valores)
+
+dfd <- df %>%
+  filter(Presion == 'PresionDiastolica') %>%
+  pull (Valores)
+```
+
+
+Basándonos en el resultado obtenido usando R, realizaremos el paso a paso del teorema de razón de varianzas con los datos de presión arterial y verificaremos si es consistente. 
+
+**Resultado con R:**
+**Apliquemos la función `var.test` a los datos de presión arterial**
+
+```{r}
+var.test(dfs, dfd)
+```
+
+Explicación: 
+
+Se realizó la prueba F (var.test) para comparar las varianzas de dfs y dfd, con el objetivo de verificar si las varianzas de la presión sistólica y la presión diastólica son iguales.
+
+El resultado muestra un valor p de 0.7102, mucho mayor a 0.05, por lo que no se rechaza la hipótesis nula de igualdad de varianzas. Esto indica que no existe evidencia estadísticamente significativa de que las varianzas de ambos grupos sean diferentes: dfs tiene una varianza de 83.32, mientras que dfd tiene una varianza de 89.80, valores bastante cercanos entre sí. Además, el intervalo de confianza del 95% (0.624 – 1.379) incluye el valor 1, lo que confirma esta conclusión, ya que 1 representa el caso en que ambas varianzas serían exactamente iguales.
+
+Ahora confirmaremos este resultado usando el teorema paso a paso:
+
+**Paso 1: Planteamiento de hipótesis**
+
+$$H_0: \sigma^2_{sistolica} = \sigma^2_{diastolica}$$
+$$H_1: \sigma^2_{sistolica} \neq \sigma^2_{diastolica}$$
+
+**Paso 2: Teorema de razón de varianzas**
+
+Si $X_1, ..., X_{n_1}$ y $Y_1,...,Y_{n_2}$ provienen de poblaciones normales independientes, el estadístico:
+
+$$F = \frac{S_1^2}{S_2^2} \sim F_{n_1-1,\ n_2-1}$$
+
+bajo $H_0: \sigma_1^2 = \sigma_2^2$.
+
+**Paso 3: Cálculo de las varianzas muestrales**
+
+```{r}
+s1_2 <- var(dfs)
+s2_2 <- var(dfd)
+s1_2
+s2_2
+```
+
+**Paso 4: Cálculo del estadístico F**
+
+```{r}
+F_calculado <- s1_2 / s2_2
+F_calculado
+```
+**Paso 5: Grados de libertad**
+
+```{r}
+n1 <- length(dfs)
+n2 <- length(dfd)
+gl1 <- n1 - 1
+gl2 <- n2 - 1
+gl1
+gl2
+```
+
+**Paso 6: Cálculo del p-valor**
+
+```{r}
+p_valor <- 2 * min(pf(F_calculado, gl1, gl2), 
+                    1 - pf(F_calculado, gl1, gl2))
+p_valor
+```
+
+**Paso 7: Intervalo de confianza al 95%**
+
+```{r}
+alpha <- 0.05
+IC_inferior <- F_calculado / qf(1 - alpha/2, gl1, gl2)
+IC_superior <- F_calculado / qf(alpha/2, gl1, gl2)
+c(IC_inferior, IC_superior)
+```
+**Conclusión final:**
+
+Al comparar los resultados, el F calculado a mano (0.9278405) y los grados de libertad (99 y 99) coinciden exactamente con los que da var.test() en R. Con el p-valor pasa lo mismo: tanto el cálculo manual como la función arrojan 0.7102, por lo que no hay ninguna discrepancia entre ambos métodos.
+
+Con un p-valor tan alto (0.7102), muy por encima de 0.05, no se rechaza la hipótesis nula de igualdad de varianzas: no hay evidencia de que exista una diferencia significativa entre la varianza de dfs y la de dfd. Esto también se ve reflejado en el intervalo de confianza (0.6242897 – 1.3789878), que sí incluye el valor 1, y en lo parecidas que son las varianzas de ambos grupos (83.32 vs 89.80). En resumen, todo el cálculo manual confirma que el resultado que arroja var.test() es correcto, y además respalda que, al comparar las medias de la presión sistólica y diastólica más adelante, se puede usar la prueba t asumiendo varianzas iguales.
+
+
+
+
+
 
 
 
